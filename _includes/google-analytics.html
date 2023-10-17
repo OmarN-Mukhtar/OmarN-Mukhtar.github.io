@@ -1,5 +1,14 @@
 <!-- Google Analytics -->
 {% if site.google-analytics %}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G69DQL4MZ7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G69DQL4MZ7');
+</script>
 <script>
 var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
 if (dnt != "1" && dnt != "yes") {
