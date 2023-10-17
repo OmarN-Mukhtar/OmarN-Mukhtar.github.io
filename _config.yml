@@ -14,6 +14,6 @@ github_username:  OmarN-Mukhtar
 
 # Google-analytics
 google-analytics:
-  id: ""
+  id: "G-G69DQL4MZ7"
 
 exclude: ['package.json', 'src' , 'node_modules']
