@@ -1,0 +1,172 @@
+/* styles.css — drop this in <head> as <link rel="stylesheet" href="styles.css"> */
+
+:root{
+  --bg:        #0f172a;   /* slate-900 */
+  --bg-soft:   #111827;   /* gray-900 */
+  --card:      #111827;   /* gray-900 */
+  --card-2:    #0b1222;
+  --text:      #e5e7eb;   /* gray-200 */
+  --muted:     #9ca3af;   /* gray-400 */
+  --border:    #1f2937;   /* gray-800 */
+  --accent:    #7c3aed;   /* violet-600 */
+  --accent-2:  #22d3ee;   /* cyan-400 */
+  --good:      #22c55e;   /* green-500 */
+  --bad:       #ef4444;   /* red-500 */
+  --shadow:    0 10px 30px rgba(0,0,0,.35);
+}
+
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:      #f8fafc;   /* slate-50 */
+    --bg-soft: #ffffff;
+    --card:    #ffffff;
+    --card-2:  #f1f5f9;
+    --text:    #0f172a;   /* slate-900 */
+    --muted:   #475569;   /* slate-600 */
+    --border:  #e5e7eb;   /* gray-200 */
+    --accent:  #6d28d9;   /* violet-700 */
+    --accent-2:#0891b2;   /* cyan-700 */
+    --shadow:  0 10px 25px rgba(2,6,23,.08);
+  }
+}
+
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  padding:0;
+  background: radial-gradient(1200px 800px at 10% -10%, rgba(124,58,237,.15), transparent 50%),
+              radial-gradient(1000px 600px at 110% 10%, rgba(34,211,238,.12), transparent 60%),
+              var(--bg);
+  color:var(--text);
+  font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+
+body{
+  max-width: 980px;
+  margin: 2rem auto;
+  padding: 0 1rem 4rem;
+}
+
+h1{
+  font-size: clamp(1.8rem, 2.4vw + 1rem, 2.6rem);
+  line-height: 1.1;
+  margin: .2rem 0 1.2rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+h2{
+  margin: 1.4rem 0 .8rem;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.stats{
+  background: linear-gradient(180deg, var(--card), var(--card-2));
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+#returns-list{
+  list-style: none;
+  padding: 0;
+  margin: .4rem 0 1rem;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: .5rem .75rem;
+}
+#returns-list li{
+  background: rgba(124,58,237,.08);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: .55rem .7rem;
+  border-radius: 10px;
+}
+
+#equity, #initial-equity, #last-updated{
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+/* Tables */
+.positions-table, .fills-table{
+  width:100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.positions-table thead th,
+.fills-table thead th{
+  background: linear-gradient(180deg, rgba(124,58,237,.18), rgba(124,58,237,.10));
+  color: var(--text);
+  padding: .75rem .6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  font-size: .82rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.positions-table tbody td,
+.fills-table tbody td{
+  padding: .75rem .6rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.positions-table tbody tr:nth-child(even),
+.fills-table tbody tr:nth-child(even){
+  background: rgba(148,163,184,.05);
+}
+
+.positions-table tbody tr:hover,
+.fills-table tbody tr:hover{
+  background: rgba(34,211,238,.08);
+}
+
+.positions-table td:nth-child(3),
+.positions-table td:nth-child(4),
+.positions-table td:nth-child(5){
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.positions-table td:nth-child(2){
+  font-variant-numeric: tabular-nums;
+}
+
+/* Chips for positive/negative numbers (works with your JS formatting) */
+td:has(> span.positive),
+span.positive{ color: var(--good); }
+td:has(> span.negative),
+span.negative{ color: var(--bad); }
+
+/* Utility */
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+/* Small screens */
+@media (max-width: 640px){
+  body{ padding: 0 .75rem 3rem; }
+  .positions-table, .fills-table{
+    display:block;
+    overflow-x:auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  thead th, tbody td{ white-space: nowrap; }
+}
