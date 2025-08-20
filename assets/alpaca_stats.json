@@ -11,11 +11,11 @@
   "positions": [
     {
       "symbol": "BTCUSD",
-      "qty": 0.85074951,
-      "market_value": 97261.613595,
-      "unrealized_pl": -1744.118821,
-      "unrealized_plpc": -0.0176163417858635
+      "qty": 0.852237101,
+      "market_value": 97494.597421,
+      "unrealized_pl": -1681.491521,
+      "unrealized_plpc": -0.0169546060843695
     }
   ],
-  "last_updated": "2025-08-20T21:14:07.960376+00:00"
+  "last_updated": "2025-08-20T22:14:06.864450+00:00"
 }
