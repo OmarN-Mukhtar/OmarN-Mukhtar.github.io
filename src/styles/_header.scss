@@ -87,6 +87,17 @@
       font-size: 35px;
     }
   }
+  .icon-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: inherit;
+    @media only screen and (min-width:$cut) {
+      font-size: 14px;
+    }
+  }
 }
 
 .down {
