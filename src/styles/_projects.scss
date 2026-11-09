@@ -98,4 +98,15 @@
                 background-color 0.3s ease-in,
                 border-color 0.3s ease-in;
   }
+  &.disabled {
+    color: #999;
+    border-color: #999;
+    cursor: default;
+    pointer-events: none;
+    &:hover, &:active {
+      background-color: transparent;
+      border-color: #999;
+      color: #999;
+    }
+  }
 }
