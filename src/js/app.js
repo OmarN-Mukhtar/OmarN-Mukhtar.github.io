@@ -115,4 +115,21 @@ document.addEventListener("DOMContentLoaded", function () {
     "retina_detect": true
   });
 
+  /* copy email to clipboard */
+  var emailBtn = document.getElementById('email-copy');
+  if (emailBtn) {
+    emailBtn.addEventListener('click', function () {
+      var tooltip = emailBtn.querySelector('.tooltip-text');
+      var original = tooltip.textContent;
+      navigator.clipboard.writeText(emailBtn.getAttribute('data-email')).then(function () {
+        tooltip.textContent = 'Copied!';
+        tooltip.classList.add('copied');
+        setTimeout(function () {
+          tooltip.textContent = original;
+          tooltip.classList.remove('copied');
+        }, 1500);
+      });
+    });
+  }
+
 }, false);

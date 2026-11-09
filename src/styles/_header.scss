@@ -90,6 +90,28 @@
       font-size: 35px;
     }
   }
+  .tooltip-icon {
+    position: relative;
+  }
+  .tooltip-text {
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFF;
+    color: $main;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+  }
+  .tooltip-icon:hover .tooltip-text,
+  .tooltip-text.copied {
+    opacity: 1;
+  }
   .icon-pill {
     display: flex;
     align-items: center;
