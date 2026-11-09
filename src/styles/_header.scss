@@ -62,6 +62,9 @@
   display: flex;
   justify-content: center;
   text-align: center;
+  a {
+    text-decoration: none;
+  }
   .icon {
     text-align: center;
     color: #FFF;
